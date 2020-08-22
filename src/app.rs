@@ -1,8 +1,8 @@
 use std::convert::TryFrom;
-use warpgrapher::{Engine, Error};
-use warpgrapher::engine::config::{Configuration};
-use warpgrapher::engine::database::DatabaseEndpoint;
+use warpgrapher::engine::config::Configuration;
 use warpgrapher::engine::database::cosmos::CosmosEndpoint;
+use warpgrapher::engine::database::DatabaseEndpoint;
+use warpgrapher::{Engine, Error};
 
 static CONFIG: &str = "
 version: 1
@@ -18,15 +18,14 @@ model:
 ";
 
 pub async fn create_app_engine() -> Result<Engine, Error> {
+    // parse config
+    let config = Configuration::try_from(CONFIG.to_string())?;
 
-   // parse config
-   let config = Configuration::try_from(CONFIG.to_string())?;
+    // define database endpoint
+    let db = CosmosEndpoint::from_env()?.pool().await?;
 
-   // define database endpoint
-   let db = CosmosEndpoint::from_env()?.pool().await?;
+    // create warpgrapher engine
+    let engine: Engine<(), ()> = Engine::new(config, db).build()?;
 
-   // create warpgrapher engine
-   let engine: Engine<(), ()> = Engine::new(config, db).build()?;
-
-   Ok(engine)
+    Ok(engine)
 }
