@@ -1,4 +1,5 @@
 # Warpgrapher + AWS Lambda
+[![Build Status](https://github.com/warpforge/warpgrapher-lambda/workflows/Test/badge.svg)](https://github.com/warpforge/warpgrapher-lambda/actions?query=workflow%3A%22Test%22+branch%3Amaster)
 
 This project demonstrates how to run a [warpgrapher](https://github.com/warpforge/warpgrapher) service on an [AWS Lambda](https://aws.amazon.com/lambda) serverless function. 
 
