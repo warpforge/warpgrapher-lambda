@@ -13,7 +13,7 @@ serde_json = "^1"
 serde_derive = "^1"
 simple_logger = "^1"
 tokio = "0.2.22"
-warpgrapher = { git="https://github.com/warpforge/warpgrapher", branch="53-release-0.3.0", features=["cosmos"] }
+warpgrapher = { version="0.3.0", features=["cosmos"] }
 
 [[bin]]
 name = "bootstrap"
