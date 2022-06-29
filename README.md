@@ -10,10 +10,11 @@ This project demonstrates how to run a [warpgrapher](https://github.com/warpforg
 - [AWS Lambda Function](https://aws.amazon.com/blogs/opensource/rust-runtime-for-aws-lambda/) with CosmosDB environment variables:
 
 ```bash
-export WG_COSMOS_HOST=*MY-COSMOS-DB*.gremlin.cosmos.azure.com
-export WG_COSMOS_PORT=443
-export WG_COSMOS_USER=/dbs/*MY-COSMOS-DB*/colls/*MY-COSMOS-COLLECTION*
-export WG_COSMOS_PASS=*MY-COSMOS-KEY*
+export WG_CYPHER_HOST=127.0.0.1
+export WG_CYPHER_READ_REPLICAS=127.0.0.1
+export WG_CYPHER_PORT=443
+export WG_CYPHER_USER=
+export WG_CYPHER_PASS=
 ```
 
 ## Dependencies
