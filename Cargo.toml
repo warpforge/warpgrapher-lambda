@@ -2,18 +2,18 @@
 name = "warpgrapher-lambda"
 version = "0.1.0"
 authors = ["dev"]
-edition = "2018"
+edition = "2021"
 autobins = false
 
 [dependencies]
-lambda = { git="https://github.com/awslabs/aws-lambda-rust-runtime", branch="master" }
-log = "^0.4"
-serde = "^1"
-serde_json = "^1"
-serde_derive = "^1"
-simple_logger = "^1"
-tokio = "0.2.22"
-warpgrapher = { version="0.3.0", features=["cosmos"] }
+lambda_runtime = "0.3.0"
+log = "0.4.17"
+serde = "1.0.137"
+serde_json = "1.0.81"
+serde_derive = "1.0.137"
+simple_logger = "2.1.0"
+tokio = "1.19.2"
+warpgrapher = { version="0.11.1", features=["cypher"] }
 
 [[bin]]
 name = "bootstrap"
